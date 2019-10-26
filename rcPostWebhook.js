@@ -12,11 +12,11 @@ function post(url, message, aTitle, aText, aColor) {
 
 	axios.post(url, jsonObj)
 	.then((res) => {
-	  console.log(`statusCode: ${res.status}`)
-	  console.log(res.data)
+	  console.log('statusCode:', res.status);
+	  console.log('payload:', res.data);
 	})
 	.catch((error) => {
-	  console.error(error)
+	  console.error(error);
 	});
 
 };
