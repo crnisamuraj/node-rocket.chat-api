@@ -1,4 +1,4 @@
-const postAttachment = require("./rcPostWebhook");
+const attachment = require("./rcPostWebhook");
 
 const program = require('commander');
 
@@ -13,5 +13,5 @@ program
 
 	program.parse(process.argv);
 
-postAttachment.post(program.url, program.message, program.attachmentTitle, program.attachmentMessage, program.attachmentColor);
+attachment.post(program.url, program.message, program.attachmentTitle, program.attachmentMessage, program.attachmentColor);
 
