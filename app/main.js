@@ -1,4 +1,4 @@
-const attachment = require("./rcPostWebhook");
+const attachment = require("./modules/rcPostWebhook");
 
 const program = require('commander');
 
