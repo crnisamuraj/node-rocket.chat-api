@@ -1,18 +1,14 @@
-const axios = require('axios')
+const axios = require('axios');
 
-function post(scanPath, scanId, feedback)
-{
-
-	url = 'https://chat.doobinnovation.com/hooks/eZfAC2BgpD6vPLwS8/r9GKi89vNMJiJwh4p5PewfviPkg5pEzThNjWzBxnivJCReds'
-
+function post(url, message, aTitle, aText, aColor) {
 	jsonObj = {
-		"text": scanPath,
+		"text": message,
 		"attachments": [{
-			"title": scanId, 
-			"text": feedback, 
-			"color": "#764FF5"
+			"title": aTitle, 
+			"text": aText, 
+			"color": aColor
 		}]
-	}
+	};
 
 	axios.post(url, jsonObj)
 	.then((res) => {
@@ -21,8 +17,8 @@ function post(scanPath, scanId, feedback)
 	})
 	.catch((error) => {
 	  console.error(error)
-	})
+	});
 
-}
+};
 
-exports.post = (scanPath, scanId, feedback) => post(scanPath, scanId, feedback);
+exports.post = (url, message, aTitle, aText, aColor) => post(url, message, aTitle, aText, aColor);
